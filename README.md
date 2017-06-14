@@ -28,6 +28,6 @@ $ npm install
 $ bower install
 ```
 
-Then open the browser and go through `http://localhost:4200`
+Then open the browser and go through `http://localhost:3000`
 
 Enjoy!
