@@ -1,0 +1,37 @@
+.direct-messages-title {
+    color: var(--app-color-green);
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+#userMenu .menu-trigger-container {
+    text-align: right;
+}
+
+.app-logged-user {
+    width: var(--app-panel-width-desktop);
+    padding: 16px;
+    color: var(--app-color-black);
+    background-color: var(--app-color-blue);
+    box-shadow: none;
+}
+
+.app-logged-user .flexchild {
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.app-logged-user .display-name {
+    font-size: var(--font-size-general);
+}
+
+.app-header-main-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+    .app-logged-user {
+        width: 97vw;
+    }
+}

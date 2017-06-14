@@ -1,0 +1,7 @@
+{
+  "entrypoint": "dist/index.html",
+  "shell": "dist/assets/elements.html",
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}

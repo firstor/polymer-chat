@@ -1,0 +1,40 @@
+<app-drawer-layout>
+  <!-- Drawer content -->
+  <app-drawer slot="drawer" class="drawer" id="mainDrawer" swipe-open>
+    <section class="drawer-content">
+      <paper-menu-button horizontal-align="right" id="userMenu" #userMenu>
+        <paper-card slot="dropdown-trigger" class="app-logged-user">
+          <div class="container">
+            <div class="flexchild">
+              <b class="display-name">Hi, I logged in</b>
+            </div>
+            <div class="menu-trigger-container">
+              <paper-icon-button icon="more-horiz" class="menu-trigger"></paper-icon-button>
+            </div>
+          </div>
+        </paper-card>
+        <paper-listbox slot="dropdown-content" class="menu-content" ignoreSelect="false">
+          <paper-item class="menu-item mi-switch-de">Auf Deutsch wechseln</paper-item>
+          <paper-item class="menu-item mi-switch-en">Switch to English</paper-item>
+          <paper-item class="menu-item mi-logout">Logout</paper-item>
+        </paper-listbox>
+      </paper-menu-button>
+    </section>
+  </app-drawer>
+
+  <!-- Main content -->
+  <app-header-layout>
+    <!-- Header uses blend-background style from css -->
+    <app-header id="appHeader" reveals fixed shadow effects="blend-background" slot="header">
+      <app-toolbar>
+        <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+      </app-toolbar>
+
+      <app-toolbar>
+        <div main-title spacer id="appHeaderMainTitle" class="app-header-main-title">
+          Polymer Chat Demo
+        </div>
+      </app-toolbar>
+    </app-header>
+  </app-header-layout>
+</app-drawer-layout>

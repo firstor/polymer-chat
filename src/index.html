@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Polyer Chat Demo</title>
+  <meta name="description" content="Polymer Chat Demo">
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Document-Level Styling -->
+  <custom-style include="iron-flex iron-flex-alignment">
+    <style scope="document">
+      @font-face {
+        font-family: SegoeUI;
+        src: url('./assets/fonts/segoeui.ttf');
+      }
+      @font-face {
+        font-family: SegoeUIBold;
+        src: url('./assets/fonts/segoeuib.ttf');
+      }
+      @font-face {
+        font-family: SegoeUIItalic;
+        src: url('./assets/fonts/segoeuii.ttf');
+      }
+      @font-face {
+        font-family: SegoeUILight;
+        src: url('./assets/fonts/segoeuil.ttf');
+      }
+
+      * {
+        font-family: 'SegoeUI', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #fbfbfb;
+      }
+
+      :root {
+        --paper-font-common-base: {
+          font-family: 'SegoeUI', sans-serif;
+        }
+
+        --app-header-height: 8%;
+        --app-min-width-desktop: 600px;
+        --app-panel-width-desktop: 320px;
+
+        /*sizes*/
+        --app-font-size-normal: medium;
+        --app-font-size-small: small;
+        --app-font-size-large: large;
+        --app-font-size-input: var(--font-size-normal);
+        --app-button-height-normal: 60px;
+
+        /*colors*/
+        --app-color-blue: deepskyblue;
+        --app-color-blue-text: dodgerblue;
+        --app-color-green: green;
+        --app-color-black: black;
+        --app-color-white: #f7f7f7;
+
+        /*borders*/
+        --app-border-width-normal: 2px;
+        --app-border-width-thin: 1px;
+        --app-border-width-thick: 3px;
+        --app-border-style-normal: solid;
+        --app-border-normal: {
+          border-width: var(--app-border-width-normal);
+          border-style: var(--app-border-style-normal);
+        }
+        --app-border-thin: {
+          border-width: var(--app-border-width-thin);
+          border-style: var(--app-border-style-normal);
+        }
+        --app-border-thick: {
+          border-width: var(--app-border-width-thick);
+          border-style: var(--app-border-style-normal);
+        }
+      }
+
+      @media (min-width: 640px) {
+        :root {
+          --app-drawer-width: var(--app-panel-width-desktop);
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --app-drawer-width: 97%;
+        }
+      }
+
+      app-drawer section {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      app-drawer h2 {
+        margin: 8px 0 0;
+        padding: 18px;
+        font-size: var(--font-size-large);
+      }
+
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+
+      app-header {
+        background-color: var(--primary-color);
+        color: var(--dark-theme-text-color);
+        height: var(--app-header-height);
+        --app-header-background-front-layer: {
+          background-color: var(--app-color-blue);
+        }
+        --app-header-background-rear-layer: {
+          background-color: var(--app-color-blue);
+        }
+      }
+
+      app-toolbar {
+        top: 35%;
+        --app-toolbar-font-size: var(--font-size-large);
+        height: var(--app-header-height);
+      }
+
+      paper-menu-button {
+        padding: 0px;
+      }
+
+      [main-title] {
+        font-size: var(--font-size-large);
+      }
+
+      .container {
+        @apply --layout-horizontal;
+      }
+
+      .container-vertical {
+        @apply --layout-vertical;
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      .flexchild {
+        display: block;
+        @apply --layout-flex;
+      }
+
+      .drawer-content {
+        background-color: var(--app-color-blue);
+        height: 100%;
+        overflow: auto;
+      }
+
+      .menu-content {
+        cursor: pointer;
+        background-color: var(--app-color-white);
+      }
+
+      .menu-item {
+        margin: auto;
+        height: var(--app-button-height-normal);
+        color: var(--app-color-blue-text);
+        border-color: var(--app-color-blue);
+        border-width: var(--app-border-width-normal);
+        border-bottom-style: var(--app-border-style-normal);
+        font-size: var(--font-size-big);
+        min-width: 200px;
+        font-weight: 600;
+      }
+
+    </style>
+  </custom-style>
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#184c71">
+  <meta name="application-name" content="Polymer Chat Demo">
+
+  <!-- Polyfills -->
+  <script src="assets/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+  <link rel="import" href="assets/components.html">
+</head>
+<body>
+<app-root>Loading...</app-root>
+</body>
+</html>
