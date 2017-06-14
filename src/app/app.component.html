@@ -36,5 +36,9 @@
         </div>
       </app-toolbar>
     </app-header>
+
+    <div class="message-list">
+      <message-item *ngFor="let message of messages" [message]="message" class="message-item" id="{{message.id}}"></message-item>
+    </div>
   </app-header-layout>
 </app-drawer-layout>
