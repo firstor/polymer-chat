@@ -1,7 +1,7 @@
 .message-item-card {
-    margin: 5px 0px 0px 10px;
-    width: 94%;
-    border-radius:0.1em;
+    margin: 10px 0px 0px 2%;
+    width: 95%;
+    border-radius: 0.3em;
 }
 
 .container {
@@ -9,7 +9,7 @@
 }
 
 .flexchild  {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .sender {
@@ -17,10 +17,11 @@
 }
 
 .posted {
-    margin-left: 15px;
+    font-size: var(--app-font-size-small);
 }
 
 .text {
     @apply --app-word-wrapping;
     white-space: pre-wrap;
+    color: var(--app-color-green);
 }

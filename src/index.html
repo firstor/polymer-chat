@@ -63,6 +63,8 @@
         --app-color-green: green;
         --app-color-black: black;
         --app-color-white: #f7f7f7;
+        --app-color-snow: #ffffff;
+        --app-color-card: #757575;
 
         /*borders*/
         --app-border-width-normal: 2px;
@@ -80,6 +82,23 @@
         --app-border-thick: {
           border-width: var(--app-border-width-thick);
           border-style: var(--app-border-style-normal);
+        }
+
+        /*misc*/
+        --app-radius-normal: 2px;
+        --app-radius-card: 5px;
+        --app-shadow-normal: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        --app-word-wrapping: {
+          display: block;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -ms-word-wrap: break-word;
+          word-break: break-word;
+          -ms-word-break: break-word;
+          hyphens: none;
+          -webkit-hyphens: none;
+          -ms-hyphens: none;
+          -moz-hyphens: none;
         }
       }
 
@@ -131,6 +150,16 @@
 
       paper-menu-button {
         padding: 0px;
+      }
+
+      paper-card {
+        margin: 3% 3% 3% 3%;
+        padding: 12px;
+        width: 96%;
+        color: var(--app-color-card);
+        border-radius: var(--app-radius-card);
+        background-color: var(--app-color-snow);
+        box-shadow: var(--app-shadow-normal);
       }
 
       [main-title] {
