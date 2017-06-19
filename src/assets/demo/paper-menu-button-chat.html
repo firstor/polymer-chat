@@ -1,0 +1,503 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <title>paper-menu-button</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../bower_components/polymer/polymer.html">
+  <link rel="import" href="../bower_components/neon-animation/web-animations.html">
+
+  <!-- Styles -->
+  <link rel="import" href="../bower_components/paper-styles/color.html">
+  <link rel="import" href="../bower_components/paper-styles/default-theme.html">
+  <link rel="import" href="../bower_components/paper-styles/shadow.html">
+
+  <!-- iron Elements -->
+  <link rel="import" href="../bower_components/app-layout/app-layout.html">
+  <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="../bower_components/iron-icons/maps-icons.html">
+  <link rel="import" href="../bower_components/iron-icons/social-icons.html">
+  <link rel="import" href="../bower_components/iron-icons/image-icons.html">
+  <link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
+  <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+  <link rel="import" href="../bower_components/iron-image/iron-image.html">
+  <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+  <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+  <link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
+
+  <!-- paper Elements -->
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/paper-card/paper-card.html">
+  <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../bower_components/paper-input/paper-input.html">
+  <link rel="import" href="../bower_components/paper-item/paper-item.html">
+  <link rel="import" href="../bower_components/paper-item/paper-item-body.html">
+  <link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+  <link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+
+  <custom-style include="iron-flex iron-flex-alignment">
+    <style scope="document">
+      * {
+        font-family: 'Roboto', 'Noto', sans-serif;
+      }
+
+      body {
+        margin: 0;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #fbfbfb;
+      }
+
+      :root {
+        --paper-font-common-base: {
+          font-family: 'Roboto', 'Noto', sans-serif;
+        }
+
+        --app-header-height: 8%;
+        --app-min-width-desktop: 600px;
+        --app-panel-width-desktop: 320px;
+
+        /*sizes*/
+        --app-font-size-normal: medium;
+        --app-font-size-small: small;
+        --app-font-size-large: large;
+        --app-font-size-input: var(--font-size-normal);
+        --app-button-height-normal: 60px;
+
+        /*colors*/
+        --app-color-blue: deepskyblue;
+        --app-color-blue-text: dodgerblue;
+        --app-color-green: green;
+        --app-color-black: black;
+        --app-color-white: #f7f7f7;
+        --app-color-snow: #ffffff;
+        --app-color-card: #757575;
+
+        /*borders*/
+        --app-border-width-normal: 2px;
+        --app-border-width-thin: 1px;
+        --app-border-width-thick: 3px;
+        --app-border-style-normal: solid;
+        --app-border-normal: {
+          border-width: var(--app-border-width-normal);
+          border-style: var(--app-border-style-normal);
+        }
+        --app-border-thin: {
+          border-width: var(--app-border-width-thin);
+          border-style: var(--app-border-style-normal);
+        }
+        --app-border-thick: {
+          border-width: var(--app-border-width-thick);
+          border-style: var(--app-border-style-normal);
+        }
+
+        /*misc*/
+        --app-radius-normal: 2px;
+        --app-radius-card: 5px;
+        --app-shadow-normal: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        --app-word-wrapping: {
+          display: block;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -ms-word-wrap: break-word;
+          word-break: break-word;
+          -ms-word-break: break-word;
+          hyphens: none;
+          -webkit-hyphens: none;
+          -ms-hyphens: none;
+          -moz-hyphens: none;
+        }
+      }
+
+      @media (min-width: 640px) {
+        :root {
+          --app-drawer-width: var(--app-panel-width-desktop);
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --app-drawer-width: 97%;
+        }
+      }
+
+      app-drawer section {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      app-drawer h2 {
+        margin: 8px 0 0;
+        padding: 18px;
+        font-size: var(--font-size-large);
+      }
+
+      app-drawer-layout:not([narrow]) [drawer-toggle] {
+        display: none;
+      }
+
+      app-header {
+        background-color: var(--primary-color);
+        color: var(--dark-theme-text-color);
+        height: var(--app-header-height);
+        --app-header-background-front-layer: {
+          background-color: var(--app-color-blue);
+        }
+        --app-header-background-rear-layer: {
+          background-color: var(--app-color-blue);
+        }
+      }
+
+      app-toolbar {
+        top: 35%;
+        --app-toolbar-font-size: var(--font-size-large);
+        height: var(--app-header-height);
+      }
+
+      paper-menu-button {
+        padding: 0px;
+      }
+
+      paper-card {
+        margin: 3% 3% 3% 3%;
+        padding: 12px;
+        width: 96%;
+        color: var(--app-color-card);
+        border-radius: var(--app-radius-card);
+        background-color: var(--app-color-snow);
+        box-shadow: var(--app-shadow-normal);
+      }
+
+      [main-title] {
+        font-size: var(--font-size-large);
+      }
+
+      .container {
+        @apply --layout-horizontal;
+      }
+
+      .container-vertical {
+        @apply --layout-vertical;
+      }
+
+      .full-width {
+        width: 100%;
+      }
+
+      .flexchild {
+        display: block;
+        @apply --layout-flex;
+      }
+
+      .drawer-content {
+        background-color: var(--app-color-blue);
+        height: 100%;
+        overflow: auto;
+      }
+
+      .menu-content {
+        cursor: pointer;
+        background-color: var(--app-color-white);
+      }
+
+      .menu-item {
+        margin: auto;
+        height: var(--app-button-height-normal);
+        color: var(--app-color-blue-text);
+        border-color: var(--app-color-blue);
+        border-width: var(--app-border-width-normal);
+        border-bottom-style: var(--app-border-style-normal);
+        font-size: var(--font-size-big);
+        min-width: 200px;
+        font-weight: 600;
+      }
+
+    </style>
+  </custom-style>
+
+  <custom-style>
+    <style is="custom-style" scope="app-component">
+      .app #userMenu .menu-trigger-container {
+        text-align: right;
+      }
+
+      .app .app-logged-user {
+        width: var(--app-panel-width-desktop);
+        padding: 16px;
+        color: var(--app-color-black);
+        background-color: var(--app-color-blue);
+        box-shadow: none;
+      }
+
+      .app .app-logged-user .flexchild {
+        margin-left: 10%;
+        margin-top: 3%;
+      }
+
+      .app .app-logged-user .display-name {
+        font-size: var(--font-size-general);
+      }
+
+      .app .app-header-main-title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @media (max-width: 600px) {
+        .app .app-logged-user {
+          width: 97vw;
+        }
+      }
+    </style>
+  </custom-style>
+
+  <custom-style>
+    <style is="custom-style">
+      body {
+        font-size: 14px;
+        margin: 0;
+        padding: 24px;
+        margin: 0 auto;
+      }
+
+      .centered {
+        width: 600px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 640px) {
+        .centered {
+          width: 80%;
+        }
+      }
+
+      .centered-demo {
+        display: block;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 40px;
+        background-color: white;
+        @apply --layout-horizontal;
+        @apply --layout-wrap;
+        @apply --layout-center-justified;
+        max-height: 250px;
+      }
+
+      paper-button {
+        display: block;
+        background: #4285f4;
+        color: #fff;
+      }
+
+      paper-listbox {
+        display: block;
+      }
+
+      paper-menu-button {
+        margin: auto;
+      }
+
+      iron-image {
+        padding: 1em;
+      }
+
+      .item {
+        max-width: 300px;
+      }
+
+      .horizontal-section {
+        text-align: center;
+      }
+    </style>
+  </custom-style>
+
+</head>
+
+<body>
+
+  <app-drawer-layout class="app">
+
+    <app-drawer slot="drawer" class="drawer" id="mainDrawer" swipe-open>
+      <section class="drawer-content">
+        <paper-menu-button horizontal-align="right" id="userMenu" #userMenu>
+          <paper-card slot="dropdown-trigger" class="app-logged-user">
+            <div class="container">
+              <div class="flexchild">
+                <b class="display-name">Hi, I logged in</b>
+              </div>
+              <div class="menu-trigger-container">
+                <paper-icon-button icon="more-horiz" class="menu-trigger"></paper-icon-button>
+              </div>
+            </div>
+          </paper-card>
+          <paper-listbox slot="dropdown-content" class="menu-content" ignoreSelect="false">
+            <paper-item class="menu-item mi-switch-de">Auf Deutsch wechseln</paper-item>
+            <paper-item class="menu-item mi-switch-en">Switch to English</paper-item>
+            <paper-item class="menu-item mi-logout">Logout</paper-item>
+          </paper-listbox>
+        </paper-menu-button>
+      </section>
+    </app-drawer>
+
+    <app-header-layout>
+      <app-header reveals fixed shadow slot="header">
+        <app-toolbar>
+          <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+        </app-toolbar>
+
+        <app-toolbar>
+          <div main-title spacer id="appHeaderMainTitle" class="app-header-main-title">
+            Polymer Chat Demo
+          </div>
+        </app-toolbar>
+      </app-header>
+
+      <div class="centered">
+        <h4>Paper Icon Button + Paper Menu</h4>
+          <div class="centered-demo">
+            <div class="template">
+            <paper-menu-button>
+              <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
+              <paper-listbox slot="dropdown-content">
+                <paper-item>alpha</paper-item>
+                <paper-item>beta</paper-item>
+                <paper-item>gamma</paper-item>
+                <paper-item>delta</paper-item>
+                <paper-item>epsilon</paper-item>
+              </paper-listbox>
+            </paper-menu-button>
+          </div>
+        </div>
+
+        <h4>Paper Menu with multi selection</h4>
+        <div class="centered-demo">
+          <div class="template">
+            <paper-menu-button ignore-select>
+              <paper-icon-button icon="menu" slot="dropdown-trigger" alt="multi menu"></paper-icon-button>
+              <paper-listbox slot="dropdown-content" multi>
+                <paper-item>alpha</paper-item>
+                <paper-item>beta</paper-item>
+                <paper-item>gamma</paper-item>
+                <paper-item>delta</paper-item>
+                <paper-item>epsilon</paper-item>
+              </paper-listbox>
+            </paper-menu-button>
+          </div>
+        </div>
+
+        <h4>Disabled</h4>
+        <div class="centered-demo">
+          <div class="template">
+            <paper-menu-button disabled>
+              <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
+              <paper-listbox slot="dropdown-content">
+                <paper-item>alpha</paper-item>
+                <paper-item>beta</paper-item>
+                <paper-item>gamma</paper-item>
+                <paper-item>delta</paper-item>
+                <paper-item>epsilon</paper-item>
+              </paper-listbox>
+            </paper-menu-button>
+          </div>
+        </div>
+
+        <h4>Alternate Alignment</h4>
+        <div class="centered-demo">
+          <div class="template">
+            <paper-menu-button vertical-align="bottom" horizontal-align="right">
+              <paper-icon-button icon="menu" slot="dropdown-trigger" alt="bottom align"></paper-icon-button>
+              <paper-listbox slot="dropdown-content">
+                <paper-item>alpha</paper-item>
+                <paper-item>beta</paper-item>
+                <paper-item>gamma</paper-item>
+                <paper-item>delta</paper-item>
+                <paper-item>epsilon</paper-item>
+              </paper-listbox>
+            </paper-menu-button>
+          </div>
+        </div>
+
+        <h4>Alternate Button</h4>
+        <div class="centered-demo">
+          <div class="template">
+            <paper-menu-button>
+              <paper-button slot="dropdown-trigger" raised>
+                <iron-icon icon="check"></iron-icon>
+                <span>Dinosaurs</span>
+              </paper-button>
+              <paper-listbox slot="dropdown-content">
+                <dom-repeat id="dinosaurs" as="dinosaur">
+                  <template is="dom-repeat" as="dinosaur">
+                    <paper-item>[[dinosaur]]</paper-item>
+                  </template>
+                </dom-repeat>
+              </paper-listbox>
+            </paper-menu-button>
+            <script>
+              dinosaurs.items = [
+                'allosaurus',
+                'brontosaurus',
+                'carcharodontosaurus',
+                'diplodocus',
+                'ekrixinatosaurus',
+                'fukuiraptor',
+                'gallimimus',
+                'hadrosaurus',
+                'iguanodon',
+                'jainosaurus',
+                'kritosaurus',
+                'liaoceratops',
+                'megalosaurus',
+                'nemegtosaurus',
+                'ornithomimus',
+                'protoceratops',
+                'quetecsaurus',
+                'rajasaurus',
+                'stegosaurus',
+                'triceratops',
+                'utahraptor',
+                'vulcanodon',
+                'wannanosaurus',
+                'xenoceratops',
+                'yandusaurus',
+                'zephyrosaurus'
+              ];
+              // Support hybrid mode.
+              dinosaurs.firstElementChild.items = dinosaurs.items;
+            </script>
+          </div>
+        </div>
+
+        <h4>Alternate Content</h4>
+        <div class="centered-demo">
+          <div class="template">
+            <paper-menu-button vertical-align="bottom">
+              <paper-icon-button slot="dropdown-trigger" icon="polymer" alt="polymer"></paper-icon-button>
+              <iron-image slot="dropdown-content" src="../bower_components/iron-image/demo/polymer.svg"></iron-image>
+            </paper-menu-button>
+          </div>
+        </div>
+      </div>
+    </app-header-layout>
+
+  </app-drawer-layout>
+
+</body>
+
+</html>
