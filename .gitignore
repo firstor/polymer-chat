@@ -46,3 +46,4 @@ testem.log
 Thumbs.db
 
 bower_components
+/build
