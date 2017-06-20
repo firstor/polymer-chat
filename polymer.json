@@ -1,7 +1,27 @@
 {
   "entrypoint": "dist/index.html",
-  "shell": "dist/assets/elements.html",
+  "shell": "dist/assets/components.html",
+  "sources": [
+    "dist/**/*",
+    "!dist/assets/bower_components/**/*"
+  ],
   "extraDependencies": [
-    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
-  ]
+    "dist/assets/bower_components/webcomponentsjs/*.js"
+  ],
+  "builds": [
+    {
+      "name": "es5",
+      "preset": "es5-bundled"
+    },
+    {
+      "name": "bundled",
+      "preset": "es6-bundled",
+      "js": { "minify": false }
+    }
+  ],
+  "lint": {
+    "rules": [
+      "polymer-2"
+    ]
+  }
 }

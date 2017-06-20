@@ -18,9 +18,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "clean": "del-cli bower_components && del-cli node_modules",
+    "clean:es5": "cpr build/es5/dist/ build/es5/ && rimraf build/es5/dist/",
+    "clean:bundled": "cpr build/bundled/dist/ build/bundled/ && rimraf build/bundled/dist/",
+    "clean": "npm run clean:es5 && npm run clean:bundled",
     "build": "ng build --watch",
-    "build:prod": "ng build --prod && npm run ngu-sw-manifest",
+    "build:prod": "ng build --prod && polymer build && rimraf dist/",
+    "postbuild:prod": "npm run clean",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -54,6 +57,7 @@
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "cpr": "^2.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -62,7 +66,9 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "polymer-cli": "^1.1.0",
     "protractor": "~5.1.2",
+    "rimraf": "^2.6.1",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
