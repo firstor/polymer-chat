@@ -17,8 +17,9 @@ For details of Polymer's custom-style, please refer to [Style Shadow DOM](https:
 ### Browsers
 - [x] Chrome
 - [x] Firefox
-- [x] Microsoft Edge
-- [ ] Internet Explorer (since Polymer 2 doesn't support it)
+- [x] Microsoft Edge 13 or later
+- [x] Internet Explorer 10 or later
+- [x] Safari 9 or later
 
 ## Launch
 
