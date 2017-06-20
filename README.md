@@ -8,6 +8,8 @@ For details of Origami's custom style support, please refer to [custom-style.md]
 
 For details of Polymer's custom-style, please refer to [Style Shadow DOM](https://www.polymer-project.org/2.0/docs/devguide/style-shadow-dom).
 
+For more details of production build, please refer to [production-build.md](https://github.com/hotforfeature/origami/blob/master/docs/production-build.md).
+
 ### Libraries
 
 - Angular 4.0.2 +
