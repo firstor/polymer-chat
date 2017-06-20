@@ -33,4 +33,6 @@ $ bower install
 
 Then open the browser and go through `http://localhost:3000`
 
+* The error `"Cannot enable prod mode after platform setup"` in production build will be resolved with latest version of Angular (4.2.3)
+
 Enjoy!
