@@ -2,7 +2,7 @@
   <div class="container">
     <span class="sender">@{{message.sender}}</span>
     <div class="flexchild">
-      <span class="posted">{{message.posted | date:'HH:mm'}}</span>
+      <span class="posted">{{message.posted | messagePostTime}}</span>
       <span class="text">{{message.text}}</span>
     </div>
   </div>
