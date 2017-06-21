@@ -6,12 +6,14 @@ import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codeb
 import {AppComponent} from './app.component';
 import {MessageService} from './common/service/message.service';
 import {MessageItemComponent} from './message/message-item.component';
+import {MessageInputComponent} from './message/input/message-input.component';
 import {MessagePostTimePipe} from './message/message-post-time.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         MessageItemComponent,
+        MessageInputComponent,
         MessagePostTimePipe
     ],
     imports: [

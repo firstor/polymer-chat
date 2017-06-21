@@ -1,0 +1,12 @@
+<div class="message-input-container">
+  <paper-card class="message-input-card">
+    <paper-textarea class="form-control message-input-field"
+                    id="newMessage"
+                    label="Input a message to send"
+                    no-label-float
+                    max-rows="3"
+                    auto-validate="false"
+                    (keypress)="messageInputKeyPressed($event)">
+    </paper-textarea>
+  </paper-card>
+</div>
