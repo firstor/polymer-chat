@@ -25,28 +25,12 @@ let evergreenBrowser = checkBrowserWithMinVersion({
     edge: 14,
     safari: 10
 });
-console.log('[polymer-chat] import polyfills targeting an ' + (evergreenBrowser ? 'evergreen' : 'old-fashioned') + ' browser');
+console.log('Import polyfills targeting an ' + (evergreenBrowser ? 'evergreen' : 'old-fashioned') + ' browser');
 
 declare var System: any;
 
 if (!evergreenBrowser) {
-    /** IE9, IE10 and IE11 requires all of the following polyfills. **/
-    System.import('core-js/es6/symbol');
-    System.import('core-js/es6/object');
-    System.import('core-js/es6/function');
-    System.import('core-js/es6/parse-int');
-    System.import('core-js/es6/parse-float');
-    System.import('core-js/es6/number');
-    System.import('core-js/es6/math');
-    System.import('core-js/es6/string');
-    System.import('core-js/es6/date');
-    System.import('core-js/es6/array');
-    System.import('core-js/es6/regexp');
-    System.import('core-js/es6/map');
-    System.import('core-js/es6/set');
-
-    /** IE10 and IE11 requires the following for NgClass support on SVG elements */
-    System.import('classlist.js');  // Run `npm install --save classlist.js`.
+    System.import('./polyfills.es6');
 }
 
 /** IE10 and IE11 requires the following to support `@angular/animation`. */
@@ -75,13 +59,5 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 
 if (!evergreenBrowser) {
-    /**
-     * Date, currency, decimal and percent pipes.
-     * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
-     */
-    System.import('intl');  // Run `npm install --save intl`.
-    /**
-     * Need to import at least one locale-data with intl.
-     */
-    System.import('intl/locale-data/jsonp/en');
+    System.import('./polyfills.misc');
 }
