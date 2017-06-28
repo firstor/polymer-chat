@@ -12,9 +12,9 @@ For more details of production build, please refer to [production-build.md](http
 
 ### Libraries
 
-- Angular 4.0.2 +
-- Polymer 2.0 +
-- Origami 1.2.1 +
+- Angular 4.2.3
+- Polymer 2.0.1
+- Origami ~1.2.2
 
 ### Browsers
 - [x] Chrome
