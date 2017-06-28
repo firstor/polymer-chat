@@ -40,5 +40,8 @@
     <div class="message-list">
       <message-item *ngFor="let message of messages" [message]="message" class="message-item" id="{{message.id}}"></message-item>
     </div>
+
+    <message-input></message-input>
+
   </app-header-layout>
 </app-drawer-layout>
