@@ -30,6 +30,10 @@
     text-overflow: ellipsis;
 }
 
+.message-list {
+    margin-bottom: 90px;
+}
+
 @media (max-width: 600px) {
     .app-logged-user {
         width: 97vw;
