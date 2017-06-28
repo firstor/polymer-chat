@@ -15,7 +15,7 @@
     box-shadow: 0px 0px 12px 0px var(--primary-color);
 }
 
-.message-input-field {
+paper-textarea {
     --paper-input-container-input-color: var(--app-color-green);
     --paper-input-container-underline: {
         display: none;
