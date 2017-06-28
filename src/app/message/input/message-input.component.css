@@ -19,9 +19,9 @@ paper-textarea {
     --paper-input-container-input-color: var(--app-color-green);
     --paper-input-container-underline: {
         display: none;
-    }
+    };
     --paper-input-container-underline-focus: {
         display: none;
-    }
+    };
     @apply --app-word-wrapping;
 }
