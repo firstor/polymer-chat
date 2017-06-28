@@ -1,0 +1,13 @@
+.message-input-container {
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 320px);
+}
+
+.message-input-card {
+    width: 95%;
+    margin: 1% 2%;
+    padding: 0.5em 1em;
+}
