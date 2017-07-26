@@ -11,14 +11,12 @@
   "builds": [
     {
       "name": "es5",
-      "preset": "es5-bundled",
-      "html": {"minify": false }
+      "preset": "es5-bundled"
     },
     {
       "name": "bundled",
       "preset": "es6-bundled",
-      "js": { "minify": false },
-      "html": {"minify": false }
+      "js": { "minify": false }
     }
   ],
   "lint": {
