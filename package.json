@@ -47,20 +47,20 @@
     "@angular/service-worker": "1.0.0-beta.16",
     "@codebakery/origami": "1.2.3",
     "@types/socket.io-client": "1.4.29",
-    "angular-translator": "2.1.1-alpha.2",
+    "angular-translator": "2.2.0",
     "check-browser": "0.1.7",
     "classlist.js": "1.1.20150312",
     "core-js": "2.4.1",
     "intl": "1.2.5",
-    "rxjs": "5.4.1",
+    "rxjs": "5.4.2",
     "tributejs": "2.3.7",
     "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "@angular/cli": "1.1.1",
+    "@angular/cli": "1.2.3",
     "@angular/compiler-cli": "4.2.4",
     "@types/jasmine": "2.5.53",
-    "codelyzer": "3.1.1",
+    "codelyzer": "3.1.2",
     "cpr": "2.2.0",
     "enhanced-resolve": "3.3.0",
     "jasmine-core": "2.6.4",
@@ -75,7 +75,7 @@
     "protractor": "5.1.2",
     "rimraf": "2.6.1",
     "ts-node": "3.1.0",
-    "tslint": "5.4.3",
+    "tslint": "5.5.0",
     "typescript": "2.3.4"
   }
 }
