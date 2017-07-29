@@ -54,15 +54,15 @@
     "intl": "1.2.5",
     "rxjs": "5.4.2",
     "tributejs": "2.3.7",
-    "zone.js": "0.8.14"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@angular/cli": "1.2.4",
     "@angular/compiler-cli": "4.3.1",
     "@types/jasmine": "2.5.53",
-    "@types/node": "6.0.85",
     "codelyzer": "3.1.2",
     "cpr": "2.2.0",
+    "enhanced-resolve": "3.3.0",
     "jasmine-core": "2.6.4",
     "jasmine-spec-reporter": "4.1.1",
     "karma": "1.7.0",
