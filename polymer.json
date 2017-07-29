@@ -12,8 +12,7 @@
     {
       "name": "es5",
       "preset": "es5-bundled"
-    },
-    {
+    }, {
       "name": "bundled",
       "preset": "es6-bundled",
       "js": { "minify": false }
