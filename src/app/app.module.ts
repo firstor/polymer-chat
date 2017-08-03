@@ -4,10 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {PolymerModule} from '@codebakery/origami';
 import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
+
 import {AppComponent} from './app.component';
-import {MessageService} from './message/message.service';
+import {ChatComponent} from './message/chat/chat.component';
 import {MessageItemComponent} from './message/item/message-item.component';
 import {MessageInputComponent} from './message/input/message-input.component';
+import {MessageService} from './message/message.service';
 import {MessagePostTimePipe} from './message/message-post-time.pipe';
 
 // Imports for loading & configuring the in-memory web api
@@ -17,6 +19,7 @@ import {AppDataService} from './app-data.service';
 @NgModule({
     declarations: [
         AppComponent,
+        ChatComponent,
         MessageItemComponent,
         MessageInputComponent,
         MessagePostTimePipe

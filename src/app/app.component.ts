@@ -1,21 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {MessageService} from './message/message.service';
-import {Message} from './message/message.model';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+    template: '<chat></chat>'
 })
-export class AppComponent implements OnInit {
-    public messages: Message[];
-
-    constructor(private msgService: MessageService) {
-    }
-
-    ngOnInit(): void {
-        this.msgService.getMessages().then((messages) => {
-            this.messages = messages;
-        });
-    }
+export class AppComponent {
 }
