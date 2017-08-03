@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Message} from '../model/message.model';
+import {Message} from './message.model';
 
 @Injectable()
 export class MessageService {
