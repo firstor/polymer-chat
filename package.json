@@ -47,6 +47,7 @@
     "@angular/service-worker": "1.0.0-beta.16",
     "@codebakery/origami": "1.2.3",
     "@types/socket.io-client": "1.4.29",
+    "angular-in-memory-web-api": "0.3.2",
     "angular-translator": "2.2.0",
     "check-browser": "0.1.7",
     "classlist.js": "1.1.20150312",
