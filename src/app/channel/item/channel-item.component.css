@@ -1,0 +1,6 @@
+.item {
+    background-color: transparent;
+    color: var(--app-color-white);
+    height: 45px;
+    cursor: pointer;
+}
