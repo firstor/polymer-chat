@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Channel} from '../channel.model';
 import {ChannelService} from '../channel.service';
@@ -9,14 +9,16 @@ import {ChannelService} from '../channel.service';
     styleUrls: ['./channel-creator.component.css']
 })
 export class ChannelCreatorComponent implements OnInit {
-    public theForm: FormGroup;
+    @ViewChild('dlg')
+    private dlg: ElementRef;
+    public form: FormGroup;
 
     constructor(private channelService: ChannelService,
                 private formBuilder: FormBuilder) {
     }
 
     ngOnInit(): void {
-        this.theForm = this.formBuilder.group({
+        this.form = this.formBuilder.group({
             name: ['', Validators.required, Validators.maxLength(16)],
             disp: ['', Validators.required, Validators.maxLength(32)],
             desc: ['', Validators.maxLength(64)],
@@ -27,6 +29,11 @@ export class ChannelCreatorComponent implements OnInit {
     onSubmit(): void {
     }
 
-    closeMe(): void {
+    open(): void {
+        (this.dlg.nativeElement as any).toggle();
+    }
+
+    close(): void {
+        (this.dlg.nativeElement as any).toggle();
     }
 }

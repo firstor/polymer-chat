@@ -1,8 +1,8 @@
-<paper-dialog dynamicAlign="true" class="dialog channel-create-dialog" backdrop layered="false">
-  <form id="theForm" [formGroup]="theForm" (ngSubmit)="onSubmit()">
+<paper-dialog dynamicAlign="true" class="dialog channel-create-dialog" backdrop layered="false" #dlg>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="komed-text-subtitle create-patient-title">
       Add New Channel
-      <paper-icon-button class="dialog-close" icon="icons:close" (click)="closeMe()"></paper-icon-button>
+      <paper-icon-button class="dialog-close" icon="icons:close" (click)="close()"></paper-icon-button>
     </div>
     <div class="form-group">
       <paper-input id="name" name="name" formControlName="name"
@@ -38,7 +38,7 @@
     <div class="buttons">
       <paper-button id="okButton" class="button"
                     type="submit" raised
-                    [disabled]="!theForm.valid"
+                    [disabled]="!form.valid"
                     (click)="onSubmit()">OK
       </paper-button>
     </div>

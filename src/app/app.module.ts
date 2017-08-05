@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {ChatComponent} from './message/chat/chat.component';
 import {ChannelListComponent} from './channel/list/channel-list.component';
 import {ChannelItemComponent} from './channel/item/channel-item.component';
+import {ChannelCreatorComponent} from './channel/create/channel-creator.component';
 import {MessageItemComponent} from './message/item/message-item.component';
 import {MessageInputComponent} from './message/input/message-input.component';
 import {ChannelService} from './channel/channel.service';
@@ -25,6 +26,7 @@ import {AppDataService} from './app-data.service';
         ChatComponent,
         ChannelListComponent,
         ChannelItemComponent,
+        ChannelCreatorComponent,
         MessageItemComponent,
         MessageInputComponent,
         MessagePostTimePipe
