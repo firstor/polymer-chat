@@ -13,7 +13,7 @@
     <div *ngFor="let channel of channels">
       <channel-item class="item"
                     [channel]="channel"
-                    [selected]="isSelected(channel)"
+                    [selected]="channel.id === selectedChannel.id"
                     (channelSelect)="onChannelSelect($event)">
       </channel-item>
     </div>

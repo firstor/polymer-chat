@@ -22,7 +22,7 @@
 }
 
 .add-channel-button {
-    color: var(--app-color-label);
+    color: var(--app-color-white);
     width: var(--app-icon-button-size);
     height: var(--app-icon-button-size);
 }
