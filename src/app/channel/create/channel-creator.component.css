@@ -1,0 +1,11 @@
+.dialog-close {
+    right: 5%;
+    margin: 0;
+    width: var(--app-icon-button-size);
+    height: var(--app-icon-button-size);
+}
+
+.buttons {
+    left: 0;
+    margin-top: 5%;
+}
