@@ -19,8 +19,8 @@ export class ChannelCreatorComponent implements OnInit {
 
     ngOnInit(): void {
         this.form = this.formBuilder.group({
-            name: ['', Validators.required, Validators.maxLength(16)],
-            disp: ['', Validators.required, Validators.maxLength(32)],
+            name: ['', [Validators.required, Validators.maxLength(16)]],
+            disp: ['', [Validators.required, Validators.maxLength(32)]],
             desc: ['', Validators.maxLength(64)],
             isPrivate: true
         });
