@@ -21,7 +21,7 @@ export class ChannelCreatorComponent implements OnInit {
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.maxLength(16)]],
             disp: ['', [Validators.required, Validators.maxLength(32)]],
-            desc: ['', Validators.maxLength(64)],
+            desc: ['', Validators.maxLength(48)],
             isPrivate: true
         });
     }
