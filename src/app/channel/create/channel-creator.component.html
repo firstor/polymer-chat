@@ -1,11 +1,11 @@
 <paper-dialog dynamicAlign="true" class="dialog channel-create-dialog" backdrop layered="false">
-  <form id="theForm" (ngSubmit)="onSubmit()">
+  <form id="theForm" [formGroup]="theForm" (ngSubmit)="onSubmit()">
     <div class="komed-text-subtitle create-patient-title">
       Add New Channel
       <paper-icon-button class="dialog-close" icon="icons:close" (click)="closeMe()"></paper-icon-button>
     </div>
     <div class="form-group">
-      <paper-input id="name" name="name" #name
+      <paper-input id="name" name="name" formControlName="name"
                    label="@name"
                    type="text"
                    class="form-control"
@@ -14,7 +14,7 @@
       </paper-input>
     </div>
     <div class="form-group">
-      <paper-input id="disp" name="disp" #disp
+      <paper-input id="disp" name="disp" formControlName="disp"
                    label="Display name"
                    type="text"
                    class="form-control"
@@ -23,7 +23,7 @@
       </paper-input>
     </div>
     <div class="form-group">
-      <paper-input id="desc" name="desc" #desc
+      <paper-input id="desc" name="desc" formControlName="desc"
                    label="Description"
                    type="text"
                    class="form-control"
@@ -31,13 +31,14 @@
       </paper-input>
     </div>
     <div class="form-group">
-      <paper-checkbox id="isPrivate" name="isPrivate" #isPrivate
+      <paper-checkbox id="isPrivate" name="isPrivate" formControlName="isPrivate"
                       class="form-control">Is private channel?
-      </paper-input>
+      </paper-checkbox>
     </div>
     <div class="buttons">
       <paper-button id="okButton" class="button"
                     type="submit" raised
+                    [disabled]="!theForm.valid"
                     (click)="onSubmit()">OK
       </paper-button>
     </div>
