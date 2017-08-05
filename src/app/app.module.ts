@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {PolymerModule} from '@codebakery/origami';
 import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
 
+import {SharedModule} from './shared/shared.module';
 import {AppComponent} from './app.component';
 import {ChatComponent} from './message/chat/chat.component';
 import {ChannelListComponent} from './channel/list/channel-list.component';
@@ -40,7 +41,8 @@ import {AppDataService} from './app-data.service';
         PolymerModule.forRoot(),
         AppElementsModule,
         PaperElementsModule,
-        IronElementsModule
+        IronElementsModule,
+        SharedModule
     ],
     providers: [
         ChannelService,
