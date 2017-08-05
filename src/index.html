@@ -53,45 +53,49 @@
         --app-header-height: 8%;
         --app-min-width-desktop: 600px;
         --app-panel-width-desktop: 320px;
+        --app-dlg-max-width: 800px;
+        --app-dlg-max-height: 600px;
+        --app-dlg-min-width: 640px;
+        --app-dlg-min-height: 400px;
 
         /*sizes*/
-        --app-font-size-normal:medium;
-        --app-font-size-small:small;
-        --app-font-size-smaller:smaller;
-        --app-font-size-tiny:.8em;
-        --app-font-size-large:large;
-        --app-font-size-larger:larger;
-        --app-font-size-huge:3em;
-        --app-font-size-input:var(--font-size-normal);
-        --app-icon-button-size:48px;
-        --app-button-height-normal:60px;
+        --app-font-size-normal: medium;
+        --app-font-size-small: small;
+        --app-font-size-smaller: smaller;
+        --app-font-size-tiny: 0.8em;
+        --app-font-size-large: large;
+        --app-font-size-larger: larger;
+        --app-font-size-huge: 3em;
+        --app-font-size-input: var(--app-font-size-normal);
+        --app-icon-button-size: 48px;
+        --app-button-height-normal: 60px;
 
         /*generic colors*/
-        --app-color-dgray:#a8a8c7;
-        --app-color-gray:#cacac7;
-        --app-color-lgray:#ebebef;
-        --app-color-black:black;
-        --app-color-white:#f7f7f7;
-        --app-color-snow:#ffffff;
+        --app-color-dgray: #a8a8c7;
+        --app-color-gray: #cacac7;
+        --app-color-lgray: #ebebef;
+        --app-color-black: black;
+        --app-color-white: #f7f7f7;
+        --app-color-snow: #ffffff;
 
         /*theme colors*/
-        --app-color-bg:#3f51b5;
-        --app-color-body:#fbfbfb;
-        --app-color-card:#757575;
-        --app-color-label:#99d9ea;
-        --app-color-title:#3f51b5;
-        --app-color-text:#37373c;
-        --app-color-menu:#3f51b5;
-        --app-color-focused:#3f51b5;
-        --app-color-selected:#3f51b5;
-        --app-color-info:#3f51b5;
-        --app-color-msg:green;
+        --app-color-bg: #3f51b5;
+        --app-color-body: #fbfbfb;
+        --app-color-card: #757575;
+        --app-color-label: #99d9ea;
+        --app-color-title: #3f51b5;
+        --app-color-text: #37373c;
+        --app-color-menu: #3f51b5;
+        --app-color-focused: #3f51b5;
+        --app-color-selected: #3f51b5;
+        --app-color-info: #3f51b5;
+        --app-color-input: green;
 
         /*borders*/
-        --app-border-width-normal:0.095em;
-        --app-border-width-thin:0.075em;
-        --app-border-width-thick:0.12em;
-        --app-border-style-normal:solid;
+        --app-border-width-normal: 0.095em;
+        --app-border-width-thin: 0.075em;
+        --app-border-width-thick: 0.12em;
+        --app-border-style-normal: solid;
         --app-border-normal: {
           border-width: var(--app-border-width-normal);
           border-style: var(--app-border-style-normal);
@@ -126,6 +130,10 @@
       @media (min-width: 640px) {
         :root {
           --app-drawer-width: var(--app-panel-width-desktop);
+        }
+        .dialog {
+          min-width: var(--app-dlg-min-width);
+          min-height: var(--app-dlg-min-height);
         }
       }
 
@@ -227,6 +235,39 @@
         font-weight: 600;
       }
 
+      .dialog {
+        width: 100%;
+        height: 100%;
+        max-width: var(--app-dlg-max-width);
+        max-height: var(--app-dlg-max-height);
+        overflow: scroll;
+        padding: 24px 2px;
+        font-size: var(--app-font-size-input);
+        --paper-input-container-label: {
+          font-size: var(--app-font-size-input);
+        };
+        --paper-input-container-input: {
+          font-size: var(--app-font-size-input);
+          color: var(--app-color-input);
+        };
+      }
+
+      .title {
+        color: var(--app-color-title);
+        font-size: var(--app-font-size-large);
+        font-weight: 600;
+        line-height: 2em;
+      }
+
+      .dialog-close {
+        position: absolute;
+        right: 2%;
+        margin: 0;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        color: var(--app-color-title);
+      }
     </style>
   </custom-style>
 

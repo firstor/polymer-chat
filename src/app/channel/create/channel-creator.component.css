@@ -1,11 +1,8 @@
-.dialog-close {
-    right: 5%;
-    margin: 0;
-    width: var(--app-icon-button-size);
-    height: var(--app-icon-button-size);
+paper-checkbox {
+    margin: 18px 0;
 }
 
 .buttons {
     left: 0;
-    margin-top: 5%;
+    margin-top: 18px;
 }
