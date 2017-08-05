@@ -1,6 +1,44 @@
 .item {
     background-color: transparent;
-    color: var(--app-color-white);
+    color: var(--app-color-lgray);
     height: 45px;
     cursor: pointer;
+    padding: 4px 16px;
+}
+
+.item:focus {
+    opacity: 0.9;
+}
+
+.selected {
+    background-color: var(--app-color-body);
+    color: var(--app-color-selected);
+}
+
+.item-body {
+    font-weight: 900;
+    min-height: 0;
+}
+
+.item-body [secondary] {
+    font-size: var(--app-font-size-small);
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.fyi {
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--app-font-size-smaller);
+    color: var(--app-color-dgray);
+}
+
+.item:focus .fyi {
+    color: var(--app-color-label);
+}
+
+@media (max-width: 640px) {
+    .item {
+        width: 76vw;
+    }
 }

@@ -5,7 +5,7 @@
 }
 
 .container {
-    color: var(--app-color-blue-text);
+    color: var(--app-color-text);
 }
 
 .flexchild  {
@@ -23,5 +23,5 @@
 .text {
     @apply --app-word-wrapping;
     white-space: pre-wrap;
-    color: var(--app-color-green);
+    color: var(--app-color-msg);
 }

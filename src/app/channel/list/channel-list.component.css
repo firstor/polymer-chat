@@ -5,3 +5,30 @@
     background-color: inherit;
     margin-top: 0px;
 }
+
+.header {
+    width: var(--app-drawer-width);
+    width: calc(var(--app-drawer-width) - 2px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    padding: 12px 15px;
+    line-height: 1.5em;
+    font-size: var(--app-font-size-large);
+    color: var(--app-color-label);
+    font-weight: 700;
+}
+
+.add-channel-button {
+    color: var(--app-color-label);
+    width: var(--app-icon-button-size);
+    height: var(--app-icon-button-size);
+}
+
+@media (max-width: 640px) {
+    .header {
+        width: 95vw;
+    }
+}
