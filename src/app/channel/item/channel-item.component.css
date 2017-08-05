@@ -6,10 +6,6 @@
     padding: 4px 16px;
 }
 
-.item:focus {
-    opacity: 0.9;
-}
-
 .selected {
     background-color: var(--app-color-body);
     color: var(--app-color-selected);

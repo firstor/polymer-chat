@@ -21,7 +21,8 @@
       </paper-menu-button>
 
       <!-- Channel List -->
-      <channel-list></channel-list>
+      <channel-list (channelSelect)="onChannelSelect($event)">
+      </channel-list>
     </section>
   </app-drawer>
 

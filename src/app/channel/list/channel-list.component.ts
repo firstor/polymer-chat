@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Output, EventEmitter, OnInit} from '@angular/core';
 import {Channel} from '../channel.model';
 import {ChannelService} from '../channel.service';
 
@@ -10,6 +10,8 @@ import {ChannelService} from '../channel.service';
 export class ChannelListComponent implements OnInit {
     public channels: Channel[];
     public selectedChannel: Channel;
+    @Output()
+    private channelSelect: EventEmitter<Channel> = new EventEmitter();
 
     constructor(private channelService: ChannelService) {
     }
@@ -21,7 +23,17 @@ export class ChannelListComponent implements OnInit {
     private getChannels(): void {
         this.channelService.getChannels().then((channels) => {
             this.channels = channels;
-            this.selectedChannel = this.channels[0];
+            if (this.selectedChannel) {
+                this.channels.forEach((channel: Channel, index) => {
+                    if (this.selectedChannel.id === channel.id) {
+                        this.selectedChannel = channel;
+                        this.channelSelect.emit(this.selectedChannel);
+                    }
+                });
+            } else {
+                this.selectedChannel = this.channels[0];
+                this.channelSelect.emit(this.selectedChannel);
+            }
         });
     }
 
@@ -31,6 +43,7 @@ export class ChannelListComponent implements OnInit {
 
     onChannelSelect(channel: Channel): void {
         this.selectedChannel = channel;
+        this.channelSelect.emit(this.selectedChannel);
     }
 
     onAddChannel(): void {
