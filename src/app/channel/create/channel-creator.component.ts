@@ -39,10 +39,12 @@ export class ChannelCreatorComponent implements OnInit {
     }
 
     resetForm(): void {
-        this.form.reset();
-        for (let ctrl in this.form.controls) {
-            this.form.controls[ctrl].setErrors(null);
-        }
+        this.form.reset({
+            name: '',
+            disp: '',
+            desc: '',
+            isPrivate: true
+        });
     }
 
     onSubmit(): void {
