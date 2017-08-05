@@ -50,4 +50,8 @@ export class ChannelListComponent implements OnInit {
     onAddChannel(): void {
         (this.channelCreator as any).open();
     }
+
+    onChannelCreate(channel: Channel): void {
+        this.getChannels();
+    }
 }

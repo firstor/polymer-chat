@@ -1,6 +1,7 @@
 <div class="channel-list-content">
 
-  <channel-creator #channelCreator>
+  <channel-creator #channelCreator
+                   (channelCreate)="onChannelCreate($event)">
   </channel-creator>
 
   <div class="header">
