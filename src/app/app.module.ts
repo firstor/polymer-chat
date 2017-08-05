@@ -7,8 +7,11 @@ import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codeb
 
 import {AppComponent} from './app.component';
 import {ChatComponent} from './message/chat/chat.component';
+import {ChannelListComponent} from './channel/list/channel-list.component';
+import {ChannelItemComponent} from './channel/item/channel-item.component';
 import {MessageItemComponent} from './message/item/message-item.component';
 import {MessageInputComponent} from './message/input/message-input.component';
+import {ChannelService} from './channel/channel.service';
 import {MessageService} from './message/message.service';
 import {MessagePostTimePipe} from './message/message-post-time.pipe';
 
@@ -20,6 +23,8 @@ import {AppDataService} from './app-data.service';
     declarations: [
         AppComponent,
         ChatComponent,
+        ChannelListComponent,
+        ChannelItemComponent,
         MessageItemComponent,
         MessageInputComponent,
         MessagePostTimePipe
@@ -35,6 +40,7 @@ import {AppDataService} from './app-data.service';
         IronElementsModule
     ],
     providers: [
+        ChannelService,
         MessageService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

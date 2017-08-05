@@ -19,6 +19,10 @@
           <paper-item class="menu-item mi-logout">Logout</paper-item>
         </paper-listbox>
       </paper-menu-button>
+
+      <!-- Channel List -->
+      <channel-list (channelSelect)="onChannelSelect($event)">
+      </channel-list>
     </section>
   </app-drawer>
 

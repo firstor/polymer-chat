@@ -1,0 +1,15 @@
+<div class="channel-item-content">
+  <iron-selector #itemSelector>
+    <paper-item class="item" raised toggles role="menuitem"
+                [class.selected]="selected">
+      <paper-item-body class="item-body" two-line>
+        <div class="container">
+          <div class="container-vertical">
+            <div class="name">{{channel.disp}} <span class="fyi">@{{channel.name}}</span></div>
+            <div class="desc" secondary>{{channel.desc}}</div>
+          </div>
+        </div>
+      </paper-item-body>
+    </paper-item>
+  </iron-selector>
+</div>
