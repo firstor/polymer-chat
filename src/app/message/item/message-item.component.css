@@ -23,5 +23,5 @@
 .text {
     @apply --app-word-wrapping;
     white-space: pre-wrap;
-    color: var(--app-color-msg);
+    color: var(--app-color-input);
 }

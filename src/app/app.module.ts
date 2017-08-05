@@ -1,6 +1,6 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {PolymerModule} from '@codebakery/origami';
 import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {ChatComponent} from './message/chat/chat.component';
 import {ChannelListComponent} from './channel/list/channel-list.component';
 import {ChannelItemComponent} from './channel/item/channel-item.component';
+import {ChannelCreatorComponent} from './channel/create/channel-creator.component';
 import {MessageItemComponent} from './message/item/message-item.component';
 import {MessageInputComponent} from './message/input/message-input.component';
 import {ChannelService} from './channel/channel.service';
@@ -25,6 +26,7 @@ import {AppDataService} from './app-data.service';
         ChatComponent,
         ChannelListComponent,
         ChannelItemComponent,
+        ChannelCreatorComponent,
         MessageItemComponent,
         MessageInputComponent,
         MessagePostTimePipe
@@ -32,6 +34,7 @@ import {AppDataService} from './app-data.service';
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(AppDataService),
         PolymerModule.forRoot(),

@@ -1,4 +1,4 @@
-import {Component, Output, EventEmitter, OnInit} from '@angular/core';
+import {Component, Output, EventEmitter, ViewChild, ElementRef, OnInit} from '@angular/core';
 import {Channel} from '../channel.model';
 import {ChannelService} from '../channel.service';
 
@@ -12,6 +12,8 @@ export class ChannelListComponent implements OnInit {
     public selectedChannel: Channel;
     @Output()
     private channelSelect: EventEmitter<Channel> = new EventEmitter();
+    @ViewChild('channelCreator')
+    private channelCreator: ElementRef;
 
     constructor(private channelService: ChannelService) {
     }
@@ -46,5 +48,10 @@ export class ChannelListComponent implements OnInit {
     }
 
     onAddChannel(): void {
+        (this.channelCreator as any).open();
+    }
+
+    onChannelCreate(channel: Channel): void {
+        this.getChannels();
     }
 }

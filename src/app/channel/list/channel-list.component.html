@@ -1,4 +1,9 @@
 <div class="channel-list-content">
+
+  <channel-creator #channelCreator
+                   (channelCreate)="onChannelCreate($event)">
+  </channel-creator>
+
   <div class="header">
     <div class="title">
       List of Channels
