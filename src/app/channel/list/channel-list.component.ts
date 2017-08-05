@@ -42,6 +42,9 @@ export class ChannelListComponent implements OnInit {
     }
 
     onChannelSelect(channel: Channel): void {
+        if (this.selectedChannel && this.selectedChannel.id === channel.id) {
+            return;
+        }
         this.selectedChannel = channel;
         this.channelSelect.emit(this.selectedChannel);
     }
