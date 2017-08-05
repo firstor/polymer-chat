@@ -25,6 +25,14 @@ export class ChannelListComponent implements OnInit {
         });
     }
 
+    isSelected(channel: Channel): boolean {
+        return this.selectedChannel && this.selectedChannel.id === channel.id;
+    }
+
+    onChannelSelect(channel: Channel): void {
+        this.selectedChannel = channel;
+    }
+
     onAddChannel(): void {
     }
 }

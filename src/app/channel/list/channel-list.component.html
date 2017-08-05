@@ -5,13 +5,16 @@
     </div>
     <div class="buttons">
       <paper-icon-button class="add-channel-button" icon="icons:add"
-                         (click)="onAddChannel()">
+                          (click)="onAddChannel()">
       </paper-icon-button>
     </div>
   </div>
   <div class="body">
     <div *ngFor="let channel of channels">
-      <channel-item class="item" [channel]="channel">
+      <channel-item class="item"
+                    [channel]="channel"
+                    [selected]="isSelected(channel)"
+                    (channelSelect)="onChannelSelect($event)">
       </channel-item>
     </div>
   </div>
