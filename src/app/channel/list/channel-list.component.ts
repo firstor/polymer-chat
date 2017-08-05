@@ -9,13 +9,22 @@ import {ChannelService} from '../channel.service';
 })
 export class ChannelListComponent implements OnInit {
     public channels: Channel[];
+    public selectedChannel: Channel;
 
     constructor(private channelService: ChannelService) {
     }
 
     ngOnInit(): void {
+        this.getChannels();
+    }
+
+    private getChannels(): void {
         this.channelService.getChannels().then((channels) => {
             this.channels = channels;
+            this.selectedChannel = this.channels[0];
         });
+    }
+
+    onAddChannel(): void {
     }
 }
