@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Channel} from '../channel.model';
 import {ChannelService} from '../channel.service';
@@ -12,6 +12,8 @@ export class ChannelCreatorComponent implements OnInit {
     @ViewChild('dlg')
     private dlg: ElementRef;
     public form: FormGroup;
+    @Output()
+    private channelCreate: EventEmitter<Channel> = new EventEmitter();
 
     constructor(private channelService: ChannelService,
                 private formBuilder: FormBuilder) {
@@ -26,14 +28,40 @@ export class ChannelCreatorComponent implements OnInit {
         });
     }
 
-    onSubmit(): void {
-    }
-
     open(): void {
+        this.resetForm();
         (this.dlg.nativeElement as any).toggle();
     }
 
     close(): void {
         (this.dlg.nativeElement as any).toggle();
+        this.resetForm();
+    }
+
+    resetForm(): void {
+        this.form.reset();
+        for (let ctrl in this.form.controls) {
+            this.form.controls[ctrl].setErrors(null);
+        }
+    }
+
+    onSubmit(): void {
+        this.createChannel();
+    }
+
+    private createChannel(): void {
+        this.channelService.createChannel({
+            name: this.form.value.name,
+            disp: this.form.value.disp,
+            desc: this.form.value.desc,
+            isPrivate: this.form.value.isPrivate
+        })
+        .then((channel: Channel) => {
+            this.channelCreate.emit(channel);
+            this.close();
+        })
+        .catch((err: any) => {
+            console.error(err);
+        });
     }
 }
