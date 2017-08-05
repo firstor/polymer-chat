@@ -1,0 +1,6 @@
+<komed-alert-dialog class="dialog-base-impl" #dlgImpl
+                    title={{dialogTitle}}
+                    emitChanges>
+  <paper-icon-button class="dialog-close" icon="icons:close" (click)="close()"></paper-icon-button>
+  <ng-content></ng-content>
+</komed-alert-dialog>

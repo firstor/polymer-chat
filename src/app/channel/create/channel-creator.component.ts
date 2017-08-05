@@ -1,7 +1,8 @@
-import {Component, OnInit, ViewChild, ElementRef, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Channel} from '../channel.model';
 import {ChannelService} from '../channel.service';
+import {CommonDialogComponent} from '../../shared/dialog/common/common-dialog.component';
 
 @Component({
     selector: 'channel-creator',
@@ -10,7 +11,7 @@ import {ChannelService} from '../channel.service';
 })
 export class ChannelCreatorComponent implements OnInit {
     @ViewChild('dlg')
-    private dlg: ElementRef;
+    private dlg: CommonDialogComponent;
     public form: FormGroup;
     @Output()
     private channelCreate: EventEmitter<Channel> = new EventEmitter();
@@ -30,15 +31,15 @@ export class ChannelCreatorComponent implements OnInit {
 
     open(): void {
         this.resetForm();
-        (this.dlg.nativeElement as any).toggle();
+        this.dlg.open();
     }
 
     close(): void {
-        (this.dlg.nativeElement as any).toggle();
+        this.dlg.close();
         this.resetForm();
     }
 
-    resetForm(): void {
+    private resetForm(): void {
         this.form.reset({
             name: '',
             disp: '',

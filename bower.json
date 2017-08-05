@@ -38,6 +38,7 @@
     "paper-ripple": "PolymerElements/paper-ripple#2.0.0",
     "paper-menu-button": "PolymerElements/paper-menu-button#2.0.0",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#2.1.0",
+    "komed-alert-dialog": "kmyllyvi/komed-alert-dialog#2.0.3",
     "vaadin-upload": "v2.0.0-beta1",
     "iron-collapse": "PolymerElements/iron-collapse#2.0.0",
     "font-roboto": "StartPolymer/empty-elements#1.1.1",

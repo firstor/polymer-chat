@@ -1,9 +1,6 @@
-<paper-dialog dynamicAlign="true" class="dialog channel-create-dialog" backdrop layered="false" #dlg>
+<common-dialog class="dialog channel-create-dialog" #dlg
+               dialogTitle="Add New Channel">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="title">
-      Add New Channel
-      <paper-icon-button class="dialog-close" icon="icons:close" (click)="close()"></paper-icon-button>
-    </div>
     <div class="form-group">
       <paper-input id="name" name="name" formControlName="name"
                    label="@name"
@@ -41,4 +38,4 @@
       </paper-button>
     </div>
   </form>
-</paper-dialog>
+</common-dialog>
