@@ -49,7 +49,7 @@
         background-color: #fbfbfb;
       }
 
-      :root {
+      html {
         --app-header-height: 8%;
         --app-min-width-desktop: 600px;
         --app-panel-width-desktop: 320px;
@@ -106,6 +106,30 @@
         --app-border-thick: {
           border-width: var(--app-border-width-thick);
           border-style: var(--app-border-style-normal);
+        };
+
+        /*dialog*/
+        --komed-dialog: {
+          overflow: scroll;
+          font-size: var(--app-font-size-input);
+        };
+        --komed-dialog-title: {
+          font-size: var(--app-font-size-larger);
+          font-weight: 600;
+          line-height: 1.5em;
+        };
+        --komed-dialog-title-color: var(--app-color-title);
+        --komed-dialog-max-width: var(--app-dlg-max-width);
+        --komed-dialog-max-height: var(--app-dlg-max-height);
+        --komed-dialog-close-color: var(--app-color-title);
+
+        /* paper-input */
+        --paper-input-container-label: {
+          font-size: var(--app-font-size-input);
+        };
+        --paper-input-container-input: {
+          font-size: var(--app-font-size-input);
+          color: var(--app-color-input);
         };
 
         /*misc*/

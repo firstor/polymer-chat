@@ -6,3 +6,11 @@ paper-checkbox {
     left: 0;
     margin-top: 18px;
 }
+
+paper-button {
+    color: var(--app-color-button);
+    text-transform: none;
+    border-style: var(--app-border-style-normal);
+    border-width: var(--app-border-width-normal);
+    width: 45%;
+}
