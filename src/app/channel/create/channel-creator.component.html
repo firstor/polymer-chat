@@ -1,5 +1,5 @@
-<komed-dialog-base class="dialog channel-create-dialog" #dlg
-                   title="Add New Channel">
+<komed-action-dialog class="dialog channel-create-dialog" #dlg
+                     title="Add New Channel">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <paper-input id="name" name="name" formControlName="name"
@@ -38,4 +38,4 @@
       </paper-button>
     </div>
   </form>
-</komed-dialog-base>
+</komed-action-dialog>
