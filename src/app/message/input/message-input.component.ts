@@ -48,7 +48,6 @@ export class MessageInputComponent implements OnInit {
                     '</paper-item>';
             },
             lookup: (original) => {
-                console.log(original);
                 return original.username + original.dispname;
             }
         });
