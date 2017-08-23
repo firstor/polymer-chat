@@ -12,6 +12,7 @@ export class MessageInputComponent implements OnInit {
     @ViewChild('message')
     private message: ElementRef;
     private tribute: Tribute;
+    private users: any;
 
     constructor(private formBuilder: FormBuilder) {
         this.form = this.formBuilder.group({
@@ -20,32 +21,35 @@ export class MessageInputComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.users = [
+            {
+                username: 'foo',
+                dispname: 'Mr. Foo'
+            },
+            {
+                username: 'bar',
+                dispname: 'Mr. Bar'
+            }
+        ];
+
         this.tribute = new Tribute({
-            values: [
-                {
-                    username: 'foo',
-                    dispname: 'Mr. Foo'
-                },
-                {
-                    username: 'bar',
-                    dispname: 'Mr. Bar'
-                }
-            ],
+            values: this.users,
             trigger: '@',
             menuContainer: document.body,
             selectTemplate: (item) => {
-                return '@' + item.original.value.username;
+                return '@' + item.original.username;
             },
             menuItemTemplate: (item) => {
                 return '<paper-item class="tribute-item">' +
                     '<paper-item-body class="body">' +
-                    '<div class="username">@' + item.original.value.username + '</div>' +
-                    '<div class="dispname">' + item.original.value.dispname + '</div>' +
+                    '<div class="username">@' + item.original.username + '</div>' +
+                    '<div class="dispname">' + item.original.dispname + '</div>' +
                     '</paper-item>' +
                     '</paper-item>';
             },
             lookup: (original) => {
-                return original.value.username + original.value.dispname;
+                console.log(original);
+                return original.username + original.dispname;
             }
         });
 
