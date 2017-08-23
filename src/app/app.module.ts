@@ -11,6 +11,7 @@ import {MessageItemComponent} from './message/item/message-item.component';
 import {MessageInputComponent} from './message/input/message-input.component';
 import {MessageService} from './message/message.service';
 import {MessagePostTimePipe} from './message/message-post-time.pipe';
+import {UserService} from './message/user.service';
 
 // Imports for loading & configuring the in-memory web api
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -36,7 +37,8 @@ import {AppDataService} from './app-data.service';
         IronElementsModule
     ],
     providers: [
-        MessageService
+        MessageService,
+        UserService
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

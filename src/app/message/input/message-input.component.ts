@@ -1,5 +1,7 @@
 import {Component, Input, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../user.service';
+import {User} from '../user.model';
 import * as Tribute from 'tributejs';
 
 @Component({
@@ -12,28 +14,16 @@ export class MessageInputComponent implements OnInit {
     @ViewChild('message')
     private message: ElementRef;
     private tribute: Tribute;
-    private users: any;
 
-    constructor(private formBuilder: FormBuilder) {
+    constructor(private formBuilder: FormBuilder, private userService: UserService) {
         this.form = this.formBuilder.group({
             message: ['', [Validators.required, Validators.minLength(1)]]
         });
     }
 
     ngOnInit(): void {
-        this.users = [
-            {
-                username: 'foo',
-                dispname: 'Mr. Foo'
-            },
-            {
-                username: 'bar',
-                dispname: 'Mr. Bar'
-            }
-        ];
-
         this.tribute = new Tribute({
-            values: this.users,
+            values: [],
             trigger: '@',
             menuContainer: document.body,
             selectTemplate: (item) => {
@@ -61,6 +51,13 @@ export class MessageInputComponent implements OnInit {
             });
             this.tribute.attach(targetElement);
         }
+
+        setTimeout(() => {
+            this.userService.fetchUsers().then((users: User[]) => {
+                console.log('users fetched from the backend and so appened to the tribute');
+                this.tribute.append(0, users, true);
+            });
+        }, 2000);
     }
 
     public sendMessage() {

@@ -2,6 +2,10 @@ import {InMemoryDbService}  from 'angular-in-memory-web-api';
 
 export class AppDataService implements InMemoryDbService {
   createDb() {
+    const users = [
+      { id: 1, username: 'foo', dispname: 'Foo' },
+      { id: 2, username: 'bar', dispname: 'Mr. Bar' }
+    ];
     const messages = [
       { id: 1, posted: new Date(2017, 6, 12, 9, 3, 10), sender: 'foo', text: 'Hello' },
       { id: 2, posted: new Date(2017, 6, 12, 9, 3, 12), sender: 'bar', text: 'Hi, foo!' },
@@ -18,6 +22,7 @@ export class AppDataService implements InMemoryDbService {
       { id: 13, posted: new Date(2017, 6, 12, 9, 5, 50), sender: 'bar', text: 'OK, bye!' },
     ];
     return {
+      users: users,
       messages: messages
     };
   }
