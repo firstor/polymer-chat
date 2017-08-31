@@ -1,0 +1,26 @@
+<div class="channel-list-content">
+
+  <channel-creator #channelCreator
+                   (channelCreate)="onChannelCreate($event)">
+  </channel-creator>
+
+  <div class="header">
+    <div class="title">
+      List of Channels
+    </div>
+    <div class="buttons">
+      <paper-icon-button class="add-channel-button" icon="icons:add"
+                         (click)="onAddChannel()">
+      </paper-icon-button>
+    </div>
+  </div>
+  <div class="body">
+    <div *ngFor="let channel of channels">
+      <channel-item class="item"
+                    [channel]="channel"
+                    [selected]="channel.id === selectedChannel.id"
+                    (channelSelect)="onChannelSelect($event)">
+      </channel-item>
+    </div>
+  </div>
+</div>

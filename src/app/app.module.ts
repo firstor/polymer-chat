@@ -6,11 +6,9 @@ import {PolymerModule} from '@codebakery/origami';
 import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
 
 import {AppComponent} from './app.component';
-import {ChatComponent} from './message/chat/chat.component';
-import {MessageItemComponent} from './message/item/message-item.component';
-import {MessageInputComponent} from './message/input/message-input.component';
-import {MessageService} from './message/message.service';
-import {MessagePostTimePipe} from './message/message-post-time.pipe';
+import {SharedModule} from './shared/shared.module';
+import {ChannelModule} from './channel/channel.module';
+import {MessageModule} from './message/message.module';
 
 // Imports for loading & configuring the in-memory web api
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
@@ -18,11 +16,7 @@ import {AppDataService} from './app-data.service';
 
 @NgModule({
     declarations: [
-        AppComponent,
-        ChatComponent,
-        MessageItemComponent,
-        MessageInputComponent,
-        MessagePostTimePipe
+        AppComponent
     ],
     imports: [
         BrowserModule,
@@ -31,11 +25,11 @@ import {AppDataService} from './app-data.service';
         InMemoryWebApiModule.forRoot(AppDataService),
         PolymerModule.forRoot(),
         AppElementsModule,
+        IronElementsModule,
         PaperElementsModule,
-        IronElementsModule
-    ],
-    providers: [
-        MessageService
+        SharedModule,
+        ChannelModule,
+        MessageModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]

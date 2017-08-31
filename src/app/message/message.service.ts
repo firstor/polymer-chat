@@ -3,6 +3,7 @@ import {Http} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
+import {Channel} from '../channel/channel.model';
 import {Message} from './message.model';
 
 @Injectable()
@@ -13,12 +14,26 @@ export class MessageService {
     constructor(private http: Http) {
     }
 
-    getMessages(): Promise<Message[]> {
+    private getAllMessages(): Promise<Message[]> {
         return this.http
             .get(this.msgApiUrl)
             .toPromise()
             .then((res) => {
                 return res.json().data as Message[];
+            })
+            .catch(this.handleError);
+    }
+
+    getMessages(channel: Channel): Promise<Message[]> {
+        return this.getAllMessages()
+            .then((all) => {
+                let messages: Message[] = [];
+                all.forEach((msg: Message, index) => {
+                    if (msg.channel === channel.id) {
+                        messages.push(msg);
+                    }
+                });
+                return messages;
             })
             .catch(this.handleError);
     }

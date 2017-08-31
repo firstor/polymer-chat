@@ -1,0 +1,41 @@
+<hirst-action-dialog class="dialog channel-create-dialog" #dlg
+                     title="Add New Channel">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <paper-input id="name" name="name" formControlName="name"
+                   label="@name"
+                   type="text"
+                   class="form-control"
+                   error-message="This field is required and limited to 16 characters in length">
+      </paper-input>
+    </div>
+    <div class="form-group">
+      <paper-input id="disp" name="disp" formControlName="disp"
+                   label="Display name"
+                   type="text"
+                   class="form-control"
+                   error-message="This field is required and limited to 32 characters in length">
+      </paper-input>
+    </div>
+    <div class="form-group">
+      <paper-input id="desc" name="desc" formControlName="desc"
+                   label="Description"
+                   type="text"
+                   class="form-control"
+                   error-message="This field is limited to 48 characters in length">
+      </paper-input>
+    </div>
+    <div class="form-group">
+      <paper-checkbox id="isPrivate" name="isPrivate" formControlName="isPrivate"
+                      class="form-control">Is private channel?
+      </paper-checkbox>
+    </div>
+    <div class="buttons">
+      <paper-button id="okButton" class="button"
+                    type="submit" raised
+                    [disabled]="!form.valid"
+                    (click)="onSubmit()">OK
+      </paper-button>
+    </div>
+  </form>
+</hirst-action-dialog>

@@ -49,32 +49,51 @@
         background-color: #fbfbfb;
       }
 
-      :root {
+      html {
         --app-header-height: 8%;
         --app-min-width-desktop: 600px;
         --app-panel-width-desktop: 320px;
+        --app-dlg-max-width: 800px;
+        --app-dlg-max-height: 600px;
 
         /*sizes*/
         --app-font-size-normal: medium;
         --app-font-size-small: small;
+        --app-font-size-smaller: smaller;
+        --app-font-size-tiny: 0.8em;
         --app-font-size-large: large;
-        --app-font-size-input: var(--font-size-normal);
+        --app-font-size-larger: larger;
+        --app-font-size-huge: 3em;
+        --app-font-size-input: var(--app-font-size-normal);
+        --app-icon-button-size: 48px;
         --app-button-height-normal: 60px;
 
-        /*colors*/
-        --app-color-blue: deepskyblue;
-        --app-color-blue-text: dodgerblue;
-        --app-color-green: green;
+        /*generic colors*/
+        --app-color-dgray: #a8a8c7;
+        --app-color-gray: #cacac7;
+        --app-color-lgray: #ebebef;
         --app-color-black: black;
-        --app-color-body: #fbfbfb;
         --app-color-white: #f7f7f7;
         --app-color-snow: #ffffff;
+
+        /*theme colors*/
+        --app-color-bg: #3f51b5;
+        --app-color-body: #fbfbfb;
         --app-color-card: #757575;
+        --app-color-label: #99d9ea;
+        --app-color-title: #3f51b5;
+        --app-color-text: #37373c;
+        --app-color-menu: #3f51b5;
+        --app-color-focused: #3f51b5;
+        --app-color-selected: #3f51b5;
+        --app-color-info: #3f51b5;
+        --app-color-input: green;
+        --app-color-button: #3f51b5;
 
         /*borders*/
-        --app-border-width-normal: 2px;
-        --app-border-width-thin: 1px;
-        --app-border-width-thick: 3px;
+        --app-border-width-normal: 0.095em;
+        --app-border-width-thin: 0.075em;
+        --app-border-width-thick: 0.12em;
         --app-border-style-normal: solid;
         --app-border-normal: {
           border-width: var(--app-border-width-normal);
@@ -87,6 +106,30 @@
         --app-border-thick: {
           border-width: var(--app-border-width-thick);
           border-style: var(--app-border-style-normal);
+        };
+
+        /*dialog*/
+        --hirst-dialog: {
+          overflow: scroll;
+          font-size: var(--app-font-size-input);
+        };
+        --hirst-dialog-title: {
+          font-size: var(--app-font-size-larger);
+          font-weight: 600;
+          line-height: 1.5em;
+        };
+        --hirst-dialog-title-color: var(--app-color-title);
+        --hirst-dialog-max-width: var(--app-dlg-max-width);
+        --hirst-dialog-max-height: var(--app-dlg-max-height);
+        --hirst-dialog-close-color: var(--app-color-title);
+
+        /* paper-input */
+        --paper-input-container-label: {
+          font-size: var(--app-font-size-input);
+        };
+        --paper-input-container-input: {
+          font-size: var(--app-font-size-input);
+          color: var(--app-color-input);
         };
 
         /*misc*/
@@ -128,7 +171,7 @@
       app-drawer h2 {
         margin: 8px 0 0;
         padding: 18px;
-        font-size: var(--font-size-large);
+        font-size: var(--app-font-size-large);
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -140,16 +183,16 @@
         color: var(--dark-theme-text-color);
         height: var(--app-header-height);
         --app-header-background-front-layer: {
-          background-color: var(--app-color-blue);
+          background-color: var(--app-color-bg);
         };
         --app-header-background-rear-layer: {
-          background-color: var(--app-color-blue);
+          background-color: var(--app-color-bg);
         };
       }
 
       app-toolbar {
         top: 35%;
-        --app-toolbar-font-size: var(--font-size-large);
+        --app-toolbar-font-size: var(--app-font-size-larger);
         height: var(--app-header-height);
       }
 
@@ -168,7 +211,7 @@
       }
 
       [main-title] {
-        font-size: var(--font-size-large);
+        font-size: var(--app-font-size-larger);
       }
 
       .container {
@@ -189,7 +232,7 @@
       }
 
       .drawer-content {
-        background-color: var(--app-color-blue);
+        background-color: var(--app-color-bg);
         height: 100%;
         overflow: auto;
       }
@@ -202,15 +245,14 @@
       .menu-item {
         margin: auto;
         height: var(--app-button-height-normal);
-        color: var(--app-color-blue-text);
-        border-color: var(--app-color-blue);
+        color: var(--app-color-menu);
+        border-color: var(--app-color-menu);
         border-width: var(--app-border-width-normal);
         border-bottom-style: var(--app-border-style-normal);
-        font-size: var(--font-size-big);
+        font-size: var(--app-font-size-normal);
         min-width: 200px;
         font-weight: 600;
       }
-
     </style>
   </custom-style>
 
