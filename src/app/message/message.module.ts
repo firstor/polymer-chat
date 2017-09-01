@@ -1,5 +1,7 @@
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
 
 import {SharedModule} from '../shared/shared.module';
 import {ChannelModule} from '../channel/channel.module';
@@ -20,6 +22,11 @@ import {MessagePostTimePipe} from './message-post-time.pipe';
     ],
     imports: [
         CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppElementsModule,
+        IronElementsModule,
+        PaperElementsModule,
         SharedModule,
         ChannelModule
     ],

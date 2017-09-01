@@ -1,6 +1,6 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {PolymerModule} from '@codebakery/origami';
 import {AppElementsModule, IronElementsModule, PaperElementsModule} from '@codebakery/origami/lib/collections';
@@ -21,7 +21,6 @@ import {AppDataService} from './app-data.service';
     imports: [
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(AppDataService),
         PolymerModule.forRoot(),
