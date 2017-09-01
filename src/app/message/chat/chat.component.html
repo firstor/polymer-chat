@@ -19,6 +19,10 @@
           <paper-item class="menu-item mi-logout">Logout</paper-item>
         </paper-listbox>
       </paper-menu-button>
+
+      <!-- Channel List -->
+      <channel-list (channelSelect)="onChannelSelect($event)">
+      </channel-list>
     </section>
   </app-drawer>
 
@@ -31,8 +35,8 @@
       </app-toolbar>
 
       <app-toolbar>
-        <div main-title spacer id="appHeaderMainTitle" class="app-header-main-title">
-          Polymer Chat Demo
+        <div main-title spacer class="app-header-main-title" *ngIf="channel">
+          {{channel.disp}} <span class="fyi">{{channel.desc}}</span>
         </div>
       </app-toolbar>
     </app-header>

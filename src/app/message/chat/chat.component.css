@@ -1,18 +1,13 @@
-.direct-messages-title {
-    color: var(--app-color-green);
-    margin-left: 5%;
-    margin-top: 5%;
-}
-
 #userMenu .menu-trigger-container {
     text-align: right;
 }
 
 .app-logged-user {
     width: var(--app-panel-width-desktop);
-    padding: 16px;
-    color: var(--app-color-black);
-    background-color: var(--app-color-blue);
+    margin: 2% 0;
+    padding: 16px 8px;
+    color: var(--app-color-white);
+    background-color: transparent;
     box-shadow: none;
 }
 
@@ -22,12 +17,23 @@
 }
 
 .app-logged-user .display-name {
-    font-size: var(--font-size-general);
+    font-size: var(--app-font-size-large);
+    font-weight: normal;
 }
 
 .app-header-main-title {
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.app-header-main-title .fyi {
+    font-size: var(--app-font-size-normal);
+    color: var(--app-color-gray);
+    margin-left: 30px;
+    max-width: 480px;
+    height: 20px;
+    overflow: hidden;
+    display: inline-block;
 }
 
 .message-list {
@@ -36,6 +42,12 @@
 
 .menu-content {
     padding: 0px;
+}
+
+@media (max-width: 1023px) {
+    .app-header-main-title .fyi {
+        display: none;
+    }
 }
 
 @media (max-width: 600px) {
