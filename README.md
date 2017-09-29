@@ -17,6 +17,7 @@ For more details of production build, please refer to [production-build.md](http
 - Origami 1.2.3
 
 ### Browsers
+
 - [x] Chrome
 - [x] Firefox
 - [x] Microsoft Edge 13 or later
@@ -27,7 +28,7 @@ For more details of production build, please refer to [production-build.md](http
 
 You need to install all required packages and components.
 ```
-$ npm install
+$ yarn install
 $ bower install
 ```
 

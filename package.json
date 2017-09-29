@@ -24,10 +24,10 @@
     "start": "ng serve",
     "clean:es5": "cpr build/es5/dist/ build/es5/ && rimraf build/es5/dist/",
     "clean:bundled": "cpr build/bundled/dist/ build/bundled/ && rimraf build/bundled/dist/",
-    "clean": "npm run clean:es5 && npm run clean:bundled",
+    "clean": "yarn run clean:es5 && yarn run clean:bundled",
     "build": "ng build --watch",
     "build:prod": "ng build --prod && polymer build && rimraf dist/",
-    "postbuild:prod": "npm run clean",
+    "postbuild:prod": "yarn run clean",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
