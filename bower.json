@@ -2,9 +2,6 @@
   "name": "polymer-chat",
   "description": "Polymer Chat Demo",
   "main": "",
-  "authors": [
-    "first87 <firstor87@gmail.com>"
-  ],
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -38,7 +35,7 @@
     "paper-ripple": "PolymerElements/paper-ripple#2.0.0",
     "paper-menu-button": "PolymerElements/paper-menu-button#2.0.0",
     "paper-dialog-scrollable": "PolymerElements/paper-dialog-scrollable#2.1.0",
-    "hirst-dialog": "first87/hirst-dialog#1.0.0",
+    "hirst-dialog": "firstor/hirst-dialog#1.0.0",
     "vaadin-upload": "v2.0.0-beta1",
     "iron-collapse": "PolymerElements/iron-collapse#2.0.0",
     "font-roboto": "StartPolymer/empty-elements#1.1.1",

@@ -33,11 +33,11 @@ Somewhat confused? Let's clarify one by one.
 
 #### For the 3 possible scopes:
 1) ~~element level: where the element is defined~~
-    * e.g. https://github.com/first87/hirst-dialog/blob/2b947f287cbfebf8d06682f6d3f95c093d0363bb/hirst-dialog-base.html#L43
+    * e.g. https://github.com/firstor/hirst-dialog/blob/2b947f287cbfebf8d06682f6d3f95c093d0363bb/hirst-dialog-base.html#L43
 2) wrapper level: where the element is used, that is, any Angular component that uses the element
-    * e.g. https://github.com/first87/polymer-chat/blob/807baaa2e21c17471c4bd108388e3c02309c17c1/src/app/message/item/message-item.component.css
+    * e.g. https://github.com/firstor/polymer-chat/blob/807baaa2e21c17471c4bd108388e3c02309c17c1/src/app/message/item/message-item.component.css
 3) document level: the global scope
-    * e.g. https://github.com/first87/polymer-chat/blob/807baaa2e21c17471c4bd108388e3c02309c17c1/src/index.html#L15
+    * e.g. https://github.com/firstor/polymer-chat/blob/807baaa2e21c17471c4bd108388e3c02309c17c1/src/index.html#L15
 
 Our goal is often to override whatever is defined in the element level, so we're possibly going to define in either wrapper level or document level.
 
@@ -74,7 +74,7 @@ This case means that we did use correctly the custom CSS properties and mixins b
 We should never put our mind at reset once something is working fine on Chrome. It's the one of the most powerful browsers that supports most of recent technologies and so doesn't need all polyfills.
 
 ### B.1. Keep `;` at the end of custom CSS mixin
-For the background of the issue, refer to this : https://github.com/first87/polymer-chat/issues/11#issuecomment-310860325
+For the background of the issue, refer to this : https://github.com/firstor/polymer-chat/issues/11#issuecomment-310860325
 
 ### B.2. `element-name` selector is better than a generic CSS selector
 Seems duplicate of A.2.
@@ -95,4 +95,4 @@ Polymer's ShadyCSS may be limited to parse such multi-leveled custom styles.
 * If a component is composed entirely of general CSS styles and JavaScript codes, it can be implemented as an Angular component.
 * But if custom CSS variables and mixins are used in it, it should rather be a Polymeric component to avoid mis-styled.
 
-The old `dialog-base` and its descendant `common-dialog` that were used once, are good examples. It was replaced with Polymeric [`hirst-dialog`](https://github.com/first87/hirst-dialog) component with same feature implemented.
+The old `dialog-base` and its descendant `common-dialog` that were used once, are good examples. It was replaced with Polymeric [`hirst-dialog`](https://github.com/firstor/hirst-dialog) component with same feature implemented.

@@ -5,10 +5,10 @@
   "description": "Polymer Chat Demo",
   "repository": {
     "type": "git",
-    "url": "git://github.com/first87/polymer-chat.git"
+    "url": "git://github.com/firstor/polymer-chat.git"
   },
   "author": {
-    "name": "first87",
+    "name": "firstor",
     "email": "firstor87@gmail.com"
   },
   "keywords": [
