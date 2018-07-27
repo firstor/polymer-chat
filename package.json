@@ -35,7 +35,7 @@
   "main": "app.js",
   "dependencies": {
     "@angular/animations": "4.3.2",
-    "@angular/cli": "1.2.6",
+    "@angular/cli": "1.4.10",
     "@angular/common": "4.3.2",
     "@angular/compiler": "4.3.2",
     "@angular/compiler-cli": "4.3.2",
