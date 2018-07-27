@@ -11,12 +11,13 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 install:
   - npm i -g bower@1.8.4
+  - npm i -g firebase-tools
   - yarn
   - bower install
 script:
   - echo "Validating changes ..."
   - yarn run lint
+  - yarn run build:prod
 after_success:
   - echo "Deploy to firebase ..."
-  - yarn run build:prod
   - firebase deploy --token $FIREBASE_TOKEN
