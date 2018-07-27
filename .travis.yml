@@ -17,4 +17,6 @@ script:
   - echo "Validating changes ..."
   - yarn run lint
 after_success:
+  - echo "Deploy to firebase ..."
+  - yarn run build:prod
   - firebase deploy --token $FIREBASE_TOKEN
