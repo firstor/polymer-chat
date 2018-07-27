@@ -18,7 +18,7 @@ script:
   - echo "Validating changes ..."
   - yarn run lint
 after_success:
-  - test $TRAVIS_BRANCH = "master" &&
+  - test $TRAVIS_EVENT_TYPE = "push" && test $TRAVIS_BRANCH = "master" &&
     echo "Deploy to firebase ..." &&
     yarn run build:prod &&
     firebase deploy --token $FIREBASE_TOKEN
