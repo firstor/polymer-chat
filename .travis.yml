@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  yarn: true
+  directories:
+    - node_modules
+    - "$HOME/.cache/bower"
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
+  - export PATH="$HOME/.yarn/bin:$PATH"
+install:
+  - npm i -g bower@1.8.4
+  - npm i -g firebase-tools
+  - yarn
+  - bower install
+script:
+  - echo "Validating changes ..."
+  - yarn run lint
+after_success:
+  - test $TRAVIS_EVENT_TYPE = "push" && test $TRAVIS_BRANCH = "master" &&
+    echo "Deploy to firebase ..." &&
+    yarn run build:prod &&
+    firebase deploy --token $FIREBASE_TOKEN

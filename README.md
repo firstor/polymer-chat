@@ -1,5 +1,7 @@
 # Polymer Chat Demo
 
+[![Travis state](https://travis-ci.org/firstor/polymer-chat.svg?branch=master)](https://travis-ci.org/firstor/polymer-chat)
+
 _An example to demonstrate how to create chat app with Polymer and other web components. It also demonstrate usage of Polymer's custom-style and custom CSS variables and mixins in Angular project, by utilizing [Origami](https://github.com/hotforfeature/origami), which bridges gaps between the Angular platform and Polymer web components._
 
 ## Intro
