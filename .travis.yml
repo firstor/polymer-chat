@@ -17,7 +17,8 @@ install:
 script:
   - echo "Validating changes ..."
   - yarn run lint
-  - yarn run build:prod
 after_success:
-  - echo "Deploy to firebase ..."
-  - firebase deploy --token $FIREBASE_TOKEN
+  - test $TRAVIS_BRANCH = "master" &&
+    echo "Deploy to firebase ..." &&
+    yarn run build:prod &&
+    firebase deploy --token $FIREBASE_TOKEN
